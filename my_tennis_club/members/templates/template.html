@@ -21,6 +21,18 @@
         {% endfor %}
       </ul>
 
+      <!-- Drawing a blue background for the first iteration
+      of the loop. -->
+      <ul>
+        {% for x in fruits %}
+          <li
+              {% if forloop.first %}
+                style='background-color: lightblue;'
+              {% endif %}
+          >{{ x }}</li>
+        {% endfor %}
+      </ul>
+
       <p>In views.py you can see what the fruits variable looks like.</p>
     </body>
   </html>
