@@ -1,56 +1,9 @@
 {% load static %}
-<!DOCTYPE>
-  <html>
-    <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
     <body>
-      {% with firstname="Tobias" %}
-        <h1> Hello {{ firstname }}, how are you? </h1>
-      {% endwith %}
-
-      {% for x in mymembers %}
-        <li>{{ x.firstname }}</li>
-      {% endfor %}
-
-      {% if greeting == 1 %}
-        <h1>Hello</h1>
-      {% else %}
-        <h1>Bye</h1>
-      {% endif %}
-
-      <ul>
-        {% for x in mymembers %}
-          <li>{{ x.firstname }}</li>
-        {% endfor %}
-      </ul>
-
-      <!-- Drawing a blue background for the first iteration
-      of the loop. -->
-      <ul>
-        {% for x in fruits %}
-          <li
-              {% if forloop.first %}
-                style='background-color: lightblue;'
-              {% endif %}
-          >{{ x }}</li>
-        {% endfor %}
-      </ul>
-  
-      <!-- Adding a table to view members -->
-      <table border='1'>
-        <tr>
-          <th>ID</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-        </tr>
-        {% for x in mymembers %}
-          <tr>
-            <td>{{ x.id }}</td>
-              <td>{{ x.firstname }}</td>
-            <td>{{ x.lastname }}</td>
-          </tr>
-        {% endfor %}
-      </table>
-      
-      <p>In views.py you can see what the fruits variable looks like.</p>
+        {% for x in fruits %}<h1>{{ x }}</h1>{% endfor %}
+        <p>In myglobal.css you can see what the stylesheet looks like.</p>
     </body>
-  </html>
+</html>
