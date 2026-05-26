@@ -1,5 +1,7 @@
+{% load static %}
 <!DOCTYPE>
   <html>
+    <link rel="stylesheet" href="{% static 'myfirst.css' %}">
     <body>
       {% with firstname="Tobias" %}
         <h1> Hello {{ firstname }}, how are you? </h1>
